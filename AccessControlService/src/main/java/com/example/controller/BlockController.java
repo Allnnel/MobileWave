@@ -22,29 +22,28 @@ public class BlockController {
   private static final RestTemplate restTemplate = new RestTemplate();
 
   @Autowired
-  public BlockController(
-          UsersBlockService usersBlockService) {
+  public BlockController(UsersBlockService usersBlockService) {
     this.usersBlockService = usersBlockService;
   }
 
   @GetMapping("/sec/checkBlock")
   public ResponseEntity<ResponseMessage> checkBlock(
-          @RequestParam String ctn, @RequestParam String token) throws CustomException {
+      @RequestParam String ctn, @RequestParam String token) throws CustomException {
     getUsersBlockList(ctn, token);
     List<UsersBlock> usersBlockList = usersBlockService.findByCtn(ctn);
     ResponseMessage response =
-            new UsersBlockResponseMessage("Successes", null, "200", true, usersBlockList);
+        new UsersBlockResponseMessage("Successes", null, "200", true, usersBlockList);
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
   @PostMapping("/sec/block")
   public ResponseEntity<ResponseMessage> postCheckBlock(
-          @RequestParam String ctn,
-          @RequestParam String token,
-          @RequestParam String blockType,
-          @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
-          @RequestParam(required = false) String description)
-          throws CustomException {
+      @RequestParam String ctn,
+      @RequestParam String token,
+      @RequestParam String blockType,
+      @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
+      @RequestParam(required = false) String description)
+      throws CustomException {
     getUsersBlockList(ctn, token);
     try {
       usersBlockService.findByCtnAndBlockType(blockType, ctn);
@@ -59,12 +58,12 @@ public class BlockController {
 
   @PutMapping("/sec/block")
   public ResponseEntity<ResponseMessage> putCheckBlock(
-          @RequestParam String ctn,
-          @RequestParam String token,
-          @RequestParam String blockType,
-          @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
-          @RequestParam(required = false) String description)
-          throws CustomException {
+      @RequestParam String ctn,
+      @RequestParam String token,
+      @RequestParam String blockType,
+      @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
+      @RequestParam(required = false) String description)
+      throws CustomException {
 
     getUsersBlockList(ctn, token);
     UsersBlock usersBlock = new UsersBlock(ctn, blockType, new Date(), endDate, description);
@@ -75,8 +74,8 @@ public class BlockController {
 
   @DeleteMapping("/sec/block")
   public ResponseEntity<ResponseMessage> putCheckBlock(
-          @RequestParam String ctn, @RequestParam String blockType, @RequestParam String token)
-          throws CustomException {
+      @RequestParam String ctn, @RequestParam String blockType, @RequestParam String token)
+      throws CustomException {
     getUsersBlockList(ctn, token);
     usersBlockService.deleteByCtnAndBlockType(ctn, blockType);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
@@ -91,5 +90,4 @@ public class BlockController {
       throw new CustomException("TOKEN_NOT_FOUND", 500);
     }
   }
-
 }

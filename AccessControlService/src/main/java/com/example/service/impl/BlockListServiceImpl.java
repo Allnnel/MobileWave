@@ -1,8 +1,9 @@
-package com.example.service;
+package com.example.service.impl;
 
 import com.example.exception.CustomException;
 import com.example.model.BlockList;
 import com.example.repository.BlockListRepository;
+import com.example.service.BlockListService;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

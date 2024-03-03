@@ -1,8 +1,10 @@
-package com.example.service;
+package com.example.service.impl;
 
 import com.example.exception.CustomException;
 import com.example.model.UsersBlock;
 import com.example.repository.UsersBlockRepository;
+import com.example.service.BlockListService;
+import com.example.service.UsersBlockService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

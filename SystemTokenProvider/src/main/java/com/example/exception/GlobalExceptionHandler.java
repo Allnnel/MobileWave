@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(CustomException.class)
-    public ResponseEntity<ResponseMessage> handleCustomException(CustomException ex) {
-        ResponseMessage response =
-                new ResponseMessage("Failed", ex.getMessage(), "500");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-    }
+  @ExceptionHandler(CustomException.class)
+  public ResponseEntity<ResponseMessage> handleCustomException(CustomException ex) {
+    ResponseMessage response = new ResponseMessage("Failed", ex.getMessage(), "500");
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+  }
 }

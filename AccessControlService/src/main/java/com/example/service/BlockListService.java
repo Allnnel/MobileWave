@@ -4,5 +4,5 @@ import com.example.exception.CustomException;
 import com.example.model.BlockList;
 
 public interface BlockListService {
-  public BlockList findByBlockType(String blockType) throws CustomException;
+  BlockList findByBlockType(String blockType) throws CustomException;
 }

@@ -15,8 +15,10 @@ import org.springframework.stereotype.Component;
 public class DailyOperations {
   private final UsersOperationListService usersOperationListService;
   private final Logger logger = Logger.getLogger(DailyOperations.class.getName());
-    @Value("${system.token}")
-    private String systemToken;
+
+  @Value("${system.token}")
+  private String systemToken;
+
   @Autowired
   public DailyOperations(UsersOperationListService usersOperationListService) {
     this.usersOperationListService = usersOperationListService;

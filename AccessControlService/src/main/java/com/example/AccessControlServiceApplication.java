@@ -10,5 +10,4 @@ public class AccessControlServiceApplication {
     SpringApplication app = new SpringApplication(AccessControlServiceApplication.class);
     app.run(args);
   }
-
 }

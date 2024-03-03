@@ -6,9 +6,9 @@ import com.example.model.UsersOperationList;
 import com.example.response.HistoryResponseMessage;
 import com.example.response.ListResponseMessage;
 import com.example.response.ResponseMessage;
-import com.example.service.UsersBalanceServiceImpl;
-import com.example.service.UsersOperationHistoryServiceImpl;
-import com.example.service.UsersOperationListServiceImpl;
+import com.example.service.UsersBalanceService;
+import com.example.service.UsersOperationHistoryService;
+import com.example.service.UsersOperationListService;
 import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class OperationController {
 
-  private final UsersOperationHistoryServiceImpl historyService;
-  private final UsersOperationListServiceImpl listService;
-  private final UsersBalanceServiceImpl balanceService;
+  private final UsersOperationHistoryService historyService;
+  private final UsersOperationListService listService;
+  private final UsersBalanceService balanceService;
 
   @Autowired
   public OperationController(
-      UsersOperationHistoryServiceImpl historyService,
-      UsersOperationListServiceImpl listService,
-      UsersBalanceServiceImpl balanceService) {
+      UsersOperationHistoryService historyService,
+      UsersOperationListService listService,
+      UsersBalanceService balanceService) {
     this.historyService = historyService;
     this.listService = listService;
     this.balanceService = balanceService;

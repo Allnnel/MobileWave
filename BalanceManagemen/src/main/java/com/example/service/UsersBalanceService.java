@@ -13,7 +13,7 @@ public interface UsersBalanceService {
 
   void save(String ctn, Double balance) throws CustomException;
 
-  UsersBalanceServiceImpl.OperationEnum isValidOperation(String operation) throws CustomException;
+  OperationEnum isValidOperation(String operation) throws CustomException;
 
   void update(String ctn, Double value, String operation) throws CustomException;
 }

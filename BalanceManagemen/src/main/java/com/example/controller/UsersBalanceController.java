@@ -6,8 +6,8 @@ import com.example.model.UsersOperationHistory;
 import com.example.model.сontrolService.UsersBlock;
 import com.example.response.ResponseMessage;
 import com.example.response.UserResponseMessage;
-import com.example.service.UsersBalanceServiceImpl;
-import com.example.service.UsersOperationHistoryServiceImpl;
+import com.example.service.UsersBalanceService;
+import com.example.service.UsersOperationHistoryService;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UsersBalanceController {
 
-  private final UsersBalanceServiceImpl usersBalanceService;
-  private final UsersOperationHistoryServiceImpl usersOperationHistoryService;
+  private final UsersBalanceService usersBalanceService;
+  private final UsersOperationHistoryService usersOperationHistoryService;
 
   @Autowired
   public UsersBalanceController(
-      UsersBalanceServiceImpl usersBalanceService,
-      UsersOperationHistoryServiceImpl usersOperationHistoryService) {
+      UsersBalanceService usersBalanceService,
+      UsersOperationHistoryService usersOperationHistoryService) {
     this.usersBalanceService = usersBalanceService;
     this.usersOperationHistoryService = usersOperationHistoryService;
   }

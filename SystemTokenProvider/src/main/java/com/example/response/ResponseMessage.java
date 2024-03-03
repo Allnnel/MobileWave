@@ -5,40 +5,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseMessage {
-    @JsonProperty("status")
-    private String status;
-    @JsonProperty("code")
-    private String code;
-    @JsonProperty("message")
-    private String message;
+  @JsonProperty("status")
+  private String status;
 
-    public ResponseMessage(String status, String message, String code) {
-        this.status = status;
-        this.code = code;
-        this.message = message;
-    }
+  @JsonProperty("code")
+  private String code;
 
-    public String getStatus() {
-        return status;
-    }
+  @JsonProperty("message")
+  private String message;
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+  public ResponseMessage(String status, String message, String code) {
+    this.status = status;
+    this.code = code;
+    this.message = message;
+  }
 
-    public String getCode() {
-        return code;
-    }
+  public String getStatus() {
+    return status;
+  }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+  public void setStatus(String status) {
+    this.status = status;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public String getCode() {
+    return code;
+  }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
 }
