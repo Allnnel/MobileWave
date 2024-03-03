@@ -150,7 +150,18 @@
 
 ## База данных
 
+## База данных
+
 ### Таблица BlockList
 
 - blockType
 - description
+
+### Таблица usersBlock
+
+- ctn
+- blockType
+- startDate
+- endDate
+- description
+
