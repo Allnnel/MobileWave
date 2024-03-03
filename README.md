@@ -38,6 +38,18 @@
   - status (Успех или ошибка)
   - errorCode и errorMessage при ошибке
 
+## База данных
+
+### Таблица BlockList
+- **blockType**: Тип блокировки
+- **description**: Описание блокировки
+- 
+### Таблица usersBlock
+- **ctn**: Номер телефона пользователя
+- **blockType**: Тип блокировки
+- **startDate**: Дата начала блокировки
+- **endDate**: Дата окончания блокировки
+- **description**: Описание блокировки
 
 # Микросервис "SystemTokenProvider"
 
