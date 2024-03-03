@@ -150,16 +150,14 @@
 
 ## База данных
 
-### Таблица BlockList
-
-- blockType
-- description
-
-### Таблица usersBlock
-
-- ctn
-- blockType
-- startDate
-- endDate
-- description
+| Таблица      | Поля           |
+|--------------|----------------|
+| BlockList    | blockType      |
+|              | description    |
+|--------------|----------------|
+| usersBlock   | ctn            |
+|              | blockType      |
+|              | startDate      |
+|              | endDate        |
+|              | description    |
 
