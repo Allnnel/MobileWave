@@ -1,4 +1,4 @@
-# Микросервис SystemTokenProvider Бизнес требование
+# Микросервис SystemTokenProvider 
 
 ## Цель
 
