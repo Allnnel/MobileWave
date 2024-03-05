@@ -142,22 +142,22 @@
 - Параметры: systemToken, name, ctn, operation, value, active, description (опционально)
 - Создает новую ежедневную операцию для пользователя.
 
-## Сценарий 7: Изменение ежедневной операции у пользователя
+### Сценарий 7: Изменение ежедневной операции у пользователя
 - PUT /balance/userOperation
 - Параметры: systemToken, body (name, ctn, operation, value, active, description)
 - Формирует ответ: status (success или error).
 
-## Сценарий 8: Удаление ежедневной операции у пользователя
+### Сценарий 8: Удаление ежедневной операции у пользователя
 - DELETE /balance/userOperation
 - Параметры: systemToken, name, ctn
 - Формирует ответ: status (success или error).
 
-## Сценарий 9: Получение списка ежедневных операций у пользователя
+### Сценарий 9: Получение списка ежедневных операций у пользователя
 - GET /balance/userOperationList
 - Параметры: systemToken, ctn
 - Формирует ответ: status (success или error), userOperationList: [ {operation}, {operation}… ].
 
-## Сценарий 10: Получение суммы ежедневных операций у пользователя
+### Сценарий 10: Получение суммы ежедневных операций у пользователя
 - GET /balance/userOperationListSum
 - Параметры: systemToken, ctn
 - Формирует ответ: status (success или error), userIsActiveSumm: {{summ}}, userNotActiveSumm: {{summ}}.
