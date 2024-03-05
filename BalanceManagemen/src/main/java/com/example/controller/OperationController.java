@@ -94,13 +94,4 @@ public class OperationController {
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
-  @GetMapping("/balance/userOperationListSum")
-  public ResponseEntity<ResponseMessage> getUserOperationListSum(
-      @RequestParam String systemToken, @RequestParam String ctn) throws CustomException {
-    ExternalServiceController.checkSystemToken(ctn, systemToken);
-    BigDecimal[] bigDecimals = listService.sumValues(ctn);
-    ListResponseMessage response =
-        new ListResponseMessage("Successes", null, "200", bigDecimals[0], bigDecimals[1]);
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
-  }
 }

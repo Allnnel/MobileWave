@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>SystemTokenProvider</artifactId>
+    <artifactId>controlService</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- Определение свойств, таких как версии зависимостей -->
     <properties>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.6.4</spring-boot.version>
+        <spring-boot.version>2.5.5</spring-boot.version>
         <spring.version>5.3.14</spring.version>
         <hibernate.version>5.4.32.Final</hibernate.version>
         <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
@@ -41,11 +41,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version> 4.0.3</version>
-        </dependency>
+
         <!-- JAXB API -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -58,6 +54,13 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
+        </dependency>
+
+        <!-- swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
         </dependency>
 
     </dependencies>
