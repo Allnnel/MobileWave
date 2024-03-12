@@ -15,23 +15,27 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import static java.lang.System.out;
+
 @RestController
 public class BlockController {
 
   private final UsersBlockService usersBlockService;
-  private static final RestTemplate restTemplate = new RestTemplate();
+
+  private final RestTemplate restTemplate;
 
   @Autowired
-  public BlockController(UsersBlockService usersBlockService) {
+  public BlockController(UsersBlockService usersBlockService, RestTemplate restTemplate) {
     this.usersBlockService = usersBlockService;
+    this.restTemplate = restTemplate;
   }
 
   @GetMapping("/sec/checkBlock")
-  public ResponseEntity<ResponseMessage> checkBlock(
+  public ResponseEntity<UsersBlockResponseMessage> checkBlock(
       @RequestParam String ctn, @RequestParam String token) throws CustomException {
     getUsersBlockList(ctn, token);
     List<UsersBlock> usersBlockList = usersBlockService.findByCtn(ctn);
-    ResponseMessage response =
+    UsersBlockResponseMessage response =
         new UsersBlockResponseMessage("Successes", null, "200", true, usersBlockList);
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
@@ -73,7 +77,7 @@ public class BlockController {
   }
 
   @DeleteMapping("/sec/block")
-  public ResponseEntity<ResponseMessage> putCheckBlock(
+  public ResponseEntity<ResponseMessage> deleteCheckBlock(
       @RequestParam String ctn, @RequestParam String blockType, @RequestParam String token)
       throws CustomException {
     getUsersBlockList(ctn, token);
@@ -82,7 +86,7 @@ public class BlockController {
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
-  private void getUsersBlockList(String ctn, String token) throws CustomException {
+  public void getUsersBlockList(String ctn, String token) throws CustomException {
     try {
       String url = "http://localhost:8081//sec/st/checkSystemToken?" + "systemToken=" + token;
       restTemplate.getForEntity(url, Void.class);
