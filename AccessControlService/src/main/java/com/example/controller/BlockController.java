@@ -84,7 +84,7 @@ public class BlockController {
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
-  public void getUsersBlockList(String ctn, String token) throws CustomException {
+  private void getUsersBlockList(String ctn, String token) throws CustomException {
     try {
       String url = "http://localhost:8081//sec/st/checkSystemToken?" + "systemToken=" + token;
       restTemplate.getForEntity(url, Void.class);
