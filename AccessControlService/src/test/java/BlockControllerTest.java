@@ -3,7 +3,6 @@ import com.example.controller.BlockController;
 import com.example.exception.CustomException;
 import com.example.response.ResponseMessage;
 import com.example.response.UsersBlockResponseMessage;
-import com.example.service.BlockListService;
 import com.example.service.UsersBlockService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

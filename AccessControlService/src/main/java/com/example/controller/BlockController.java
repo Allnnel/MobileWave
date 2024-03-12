@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import static java.lang.System.out;
-
 @RestController
 public class BlockController {
 
