@@ -15,6 +15,7 @@
         <hibernate.version>5.5.7.Final</hibernate.version>
         <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
         <postgresql.version>42.2.24</postgresql.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
 
     <dependencies>
@@ -83,6 +84,14 @@
             <artifactId>mockito-core</artifactId>
             <version>3.11.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- lombok get set -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

@@ -1,8 +1,12 @@
 package com.example.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import javax.persistence.*;
-
+@Getter
+@Setter
 @Entity
 @Table(name = "systemToken", schema = "server")
 public class SystemToken {
@@ -33,54 +37,6 @@ public class SystemToken {
     this.startDate = startDate;
     this.endDate = endDate;
     this.description = description;
-    this.system = system;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getSystemToken() {
-    return systemToken;
-  }
-
-  public void setSystemToken(String systemToken) {
-    this.systemToken = systemToken;
-  }
-
-  public Date getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(Date startDate) {
-    this.startDate = startDate;
-  }
-
-  public Date getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(Date endDate) {
-    this.endDate = endDate;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getSystem() {
-    return system;
-  }
-
-  public void setSystem(String system) {
     this.system = system;
   }
 }

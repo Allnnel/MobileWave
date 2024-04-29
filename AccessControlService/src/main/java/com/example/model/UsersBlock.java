@@ -2,8 +2,12 @@ package com.example.model;
 
 import java.util.Date;
 import javax.persistence.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
+@Getter
+@Setter
 @Entity
 @Table(name = "usersBlock", schema = "server")
 public class UsersBlock {
@@ -38,52 +42,4 @@ public class UsersBlock {
   }
 
   public UsersBlock() {}
-
-  public String getCtn() {
-    return ctn;
-  }
-
-  public void setCtn(String ctn) {
-    this.ctn = ctn;
-  }
-
-  public String getBlockType() {
-    return blockType;
-  }
-
-  public void setBlockType(String blockType) {
-    this.blockType = blockType;
-  }
-
-  public Date getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(Date startDate) {
-    this.startDate = startDate;
-  }
-
-  public Date getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(Date endDate) {
-    this.endDate = endDate;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
 }

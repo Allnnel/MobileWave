@@ -1,8 +1,12 @@
 package com.example.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import javax.persistence.*;
-
+@Getter
+@Setter
 @Entity
 @Table(name = "usersOperationHistory", schema = "server")
 public class UsersOperationHistory {
@@ -33,46 +37,6 @@ public class UsersOperationHistory {
     this.operation = operation;
     this.value = value;
     this.description = description;
-    this.date = date;
-  }
-
-  public String getCtn() {
-    return ctn;
-  }
-
-  public void setCtn(String ctn) {
-    this.ctn = ctn;
-  }
-
-  public String getOperation() {
-    return operation;
-  }
-
-  public void setOperation(String operation) {
-    this.operation = operation;
-  }
-
-  public Double getValue() {
-    return value;
-  }
-
-  public void setValue(Double value) {
-    this.value = value;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public Date getDate() {
-    return date;
-  }
-
-  public void setDate(Date date) {
     this.date = date;
   }
 }
