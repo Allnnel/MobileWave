@@ -35,7 +35,7 @@ public class BlockController {
     List<UsersBlock> usersBlockList = usersBlockService.findByCtn(ctn);
     UsersBlockResponseMessage response =
         new UsersBlockResponseMessage("Successes", null, "200", true, usersBlockList);
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @PostMapping("/sec/block")
@@ -54,7 +54,7 @@ public class BlockController {
       UsersBlock usersBlock = new UsersBlock(ctn, blockType, new Date(), endDate, description);
       usersBlockService.save(usersBlock);
       ResponseMessage response = new ResponseMessage("Successes", null, "200");
-      return ResponseEntity.status(HttpStatus.CREATED).body(response);
+      return ResponseEntity.status(HttpStatus.OK).body(response);
     }
   }
 
@@ -71,7 +71,7 @@ public class BlockController {
     UsersBlock usersBlock = new UsersBlock(ctn, blockType, new Date(), endDate, description);
     usersBlockService.update(usersBlock);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @DeleteMapping("/sec/block")
@@ -81,7 +81,7 @@ public class BlockController {
     getUsersBlockList(ctn, token);
     usersBlockService.deleteByCtnAndBlockType(ctn, blockType);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   private void getUsersBlockList(String ctn, String token) throws CustomException {
