@@ -28,7 +28,7 @@ public class TokenController {
       throws CustomException {
     TokenResponseMessage response =
         new TokenResponseMessage("Successes", null, "200", service.findBySystemToken(systemToken));
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @GetMapping("/core/sr/checkAuthToken")
@@ -37,7 +37,7 @@ public class TokenController {
       throws CustomException {
     //        getUsersBlockList(ctn, token);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   private void getUsersBlockList(String ctn, String token) throws CustomException {
