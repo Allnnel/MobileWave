@@ -4,7 +4,11 @@ import com.example.model.UsersBlock;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UsersBlockResponseMessage extends ResponseMessage {
   @JsonProperty("clientBlocked")
@@ -23,20 +27,5 @@ public class UsersBlockResponseMessage extends ResponseMessage {
     this.clientBlocked = clientBlocked;
     this.blockList = blockList;
   }
-
-  public boolean isClientBlocked() {
-    return clientBlocked;
-  }
-
-  public void setClientBlocked(boolean clientBlocked) {
-    this.clientBlocked = clientBlocked;
-  }
-
-  public List<UsersBlock> getBlockList() {
-    return blockList;
-  }
-
-  public void setBlockList(List<UsersBlock> blockList) {
-    this.blockList = blockList;
-  }
+  public UsersBlockResponseMessage() {}
 }
