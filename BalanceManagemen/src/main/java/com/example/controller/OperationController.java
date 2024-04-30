@@ -40,7 +40,7 @@ public class OperationController {
     List<UsersOperationHistory> historyList = historyService.findByCtn(ctn);
     HistoryResponseMessage response =
         new HistoryResponseMessage("Successes", null, "200", historyList);
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @GetMapping("/balance/userOperation")
@@ -50,7 +50,7 @@ public class OperationController {
     ExternalServiceController.checkSystemToken(ctn, systemToken);
     UsersOperationList lists = listService.findByCtnAndName(ctn, name);
     ListResponseMessage response = new ListResponseMessage("Successes", null, "200", lists);
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @PostMapping("/balance/userOperation")
@@ -61,7 +61,7 @@ public class OperationController {
     balanceService.isValidOperation(usersOperationList.getOperation());
     listService.save(usersOperationList);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @PutMapping("/balance/userOperation")
@@ -82,7 +82,7 @@ public class OperationController {
     ExternalServiceController.checkSystemToken(ctn, systemToken);
     listService.delete(ctn, name);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @GetMapping("/balance/userOperationList")
@@ -91,7 +91,7 @@ public class OperationController {
     ExternalServiceController.checkSystemToken(ctn, systemToken);
     List<UsersOperationList> lists = listService.findByCtn(ctn);
     ListResponseMessage response = new ListResponseMessage("Successes", null, "200", lists);
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
 }
