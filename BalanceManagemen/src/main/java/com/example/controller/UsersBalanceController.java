@@ -38,7 +38,7 @@ public class UsersBalanceController {
     UsersBalance balance = usersBalanceService.findByCtn(ctn);
     ResponseMessage response =
         new UserResponseMessage("Successes", null, "200", balance.getBalance());
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @PostMapping("/balance/userBalance")
@@ -47,7 +47,7 @@ public class UsersBalanceController {
     ExternalServiceController.checkSystemToken(ctn, systemToken);
     usersBalanceService.save(ctn, 0.0);
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @PutMapping("/balance/userBalance")
@@ -84,6 +84,6 @@ public class UsersBalanceController {
     usersOperationHistoryService.save(
         new UsersOperationHistory(ctn, operation, value, description, new Date()));
     ResponseMessage response = new ResponseMessage("Successes", null, "200");
-    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 }
